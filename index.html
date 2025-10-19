@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delivery Tracker</title>
+
+  <!-- Font Kantumruy Pro -->
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <h1>ប្រព័ន្ធតាមដានការដឹក</h1>
+
+    <!-- Admin Login -->
+    <div id="loginSection">
+      <input type="password" id="adminPassword" placeholder="Admin Password">
+      <button id="loginBtn">Login</button>
+    </div>
+
+    <div id="mainSection" style="display:none;">
+      <div class="form">
+        <label>ចេញពី (From)</label>
+        <input id="fromInput" placeholder="ឧ. ភ្នំពេញ">
+
+        <label>ទៅកាន់ (To)</label>
+        <input id="toInput" placeholder="ឧ. បាត់ដំបង">
+
+        <div class="buttons">
+          <button id="startBtn">ចាប់ផ្តើមដឹក</button>
+          <button id="arrivedBtn" disabled>បានដល់</button>
+        </div>
+
+        <div class="status">
+          <div>ចំនួនដឹកសរុបថ្ងៃនេះ: <span id="dailyCount">0</span></div>
+          <div id="currentStatus">ស្ថានភាព: គ្មានដំណើរ</div>
+        </div>
+      </div>
+
+      <div class="history">
+        <h2>ប្រវត្តិ</h2>
+        <label>Filter by Month:</label>
+        <input type="month" id="filterMonth">
+        <button id="clearAllBtn">លុបទាំងអស់</button>
+        <table>
+          <thead>
+            <tr>
+              <th>ចេញពី</th>
+              <th>ទៅកាន់</th>
+              <th>ចាប់ផ្តើម</th>
+              <th>បានដល់</th>
+              <th>សកម្មភាព</th>
+            </tr>
+          </thead>
+          <tbody id="historyBody"></tbody>
+        </table>
+      </div>
+
+      <div class="chart-section">
+        <h2>សរុបប្រចាំខែ</h2>
+        <canvas id="monthlyChart" height="120"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

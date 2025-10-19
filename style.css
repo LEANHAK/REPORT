@@ -1,0 +1,53 @@
+body {
+  font-family: "Kantumruy Pro", sans-serif;
+  margin:0; padding:0;
+  background:#f0f4f8; color:#0f172a;
+}
+
+.app {
+  max-width:900px; margin:20px auto;
+  background:#fff; padding:20px;
+  border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+h1{text-align:center}
+
+.form{display:grid; grid-gap:10px;}
+.form label{font-weight:600}
+.form input{padding:8px; border-radius:6px; border:1px solid #ccc;}
+.buttons{display:flex; gap:10px;}
+button{padding:10px; border:none; border-radius:6px; background:#2563eb; color:#fff; cursor:pointer; font-weight:600;}
+button:disabled{opacity:.5; cursor:not-allowed;}
+
+.status{margin-top:10px;}
+.history{margin-top:20px;}
+table{width:100%; border-collapse:collapse;}
+th,td{border:1px solid #ddd; padding:8px; text-align:center; font-size:14px;}
+
+.chart-section{margin-top:20px;}
+#loginSection{display:flex; gap:10px; justify-content:center; margin-bottom:20px;}
+#loginSection input{padding:8px; border-radius:6px; border:1px solid #ccc;}
+/* Responsive Mobile */
+@media (max-width: 600px) {
+  .app {
+    margin: 10px; padding: 15px;
+  }
+
+  h1 { font-size: 20px; }
+
+  .form input, .form button, #adminPassword, #loginBtn {
+    font-size: 14px; padding: 8px;
+  }
+
+  table, th, td {
+    font-size: 12px;
+    word-break: break-word;
+  }
+
+  .buttons { flex-direction: column; gap: 5px; }
+
+  .chart-section canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
